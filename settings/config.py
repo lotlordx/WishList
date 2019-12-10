@@ -7,7 +7,7 @@ class Config:
     DEBUG = False
     CSRF_ENABLED = True
     SECRET = config('SECRET', default='')
-    DATABASE_CONNECTION_STRING = config('DATABASE_CONNECTION_STRING', default='')
+    SQLALCHEMY_DATABASE_URI = config('DATABASE_CONNECTION_STRING', default='')
     TESTING = True
 
 
@@ -30,7 +30,7 @@ class DevelopmentConfig(Config):
 
 class TestingConfig(Config):
     """Production Configuration Class"""
-    DATABASE_CONNECTION_STRING = "mysql://root:password@localhost/test_db"
+    SQLALCHEMY_DATABASE_URI = "mysql://root:password@localhost/test_db"
     DEBUG = True
 
 
