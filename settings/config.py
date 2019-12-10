@@ -7,7 +7,7 @@ class Config:
     DEBUG = False
     CSRF_ENABLED = True
     SECRET = config('SECRET', default='')
-    SQLALCHEMY_DATABASE_URI = config('DATABASE_CONNECTION_STRING', default='')
+    SQLALCHEMY_DATABASE_URI = config('SQLALCHEMY_DATABASE_URI', default='')
     TESTING = True
 
 

@@ -1,0 +1,18 @@
+version: "2"
+
+services:
+  db:
+    image: postgres:10.1-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+  wishlist_service:
+    build: .
+    command: bash -c "python manage.py db upgrade && flask run"
+    volumes:
+      - .:/api
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+volumes:
+  postgres_data:

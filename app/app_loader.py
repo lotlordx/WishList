@@ -1,0 +1,1 @@
+from app.wish_app import models
