@@ -7,9 +7,9 @@ db = SQLAlchemy()
 
 def create_app(config_name: str) -> object:
     """Instanciate App from config"""
-    app = FlaskAPI(__name__, settings_relative_config=True)
+    app = FlaskAPI(__name__, instance_relative_config=True)
     app.config.from_object(app_config[config_name])
-    app.config['SQLALCHEMY_TRACK_MODICFICATIONS'] = False
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db.init_app(app)
 
     return app
